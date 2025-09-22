@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBKRIST-FullStack Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .intro-box {
+            background-image: linear-gradient(135deg, #3730a3, #4338ca);
+            color: white;
+        }
+        .exercise-link {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .exercise-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            background-color: #f8fafc;
+            border-left: 4px solid #4f46e5;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 1rem;
+        }
+        pre code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-gray-900">NBKRIST Full-Stack Hub : CSE Department</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 p-6 md:p-10">
+        <div class="container mx-auto">
+            <!-- Main Persuasive Content -->
+            <div id="intro-section" class="intro-box rounded-lg p-8 mb-10 shadow-lg">
+                <h2 class="text-3xl font-bold mb-4">What is Full Stack? Why is it So Important?</h2>
+                <p class="text-base mb-4">
+                    A **Full Stack Software Engineer** is a professional who works on both the front-end (user interface) and the back-end (server-side) of an application. They are versatile, capable of managing all layers of development, from the database and server logic to the visual elements a user interacts with.
+                </p>
+                <p class="text-base mb-4">
+                    Learning full stack development is crucial to becoming a well-rounded Software Engineer because it gives you a holistic understanding of how an entire system works. It makes you a valuable asset to any team, allowing you to contribute to every stage of a project and solve problems from end to end.
+                </p>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">The MERN Stack</h3>
+                <p class="text-base mb-4">
+                    The **MERN stack** is a popular combination of technologies for building robust web applications. It consists of four key components:
+                    <ul class="list-disc ml-6 mt-2 text-sm">
+                        <li><strong>M</strong>ongoDB: A NoSQL database for flexible data storage.</li>
+                        <li><strong>E</strong>xpress.js: A back-end web application framework for Node.js.</li>
+                        <li><strong>R</strong>eact: A front-end JavaScript library for building user interfaces.</li>
+                        <li><strong>N</strong>ode.js: A JavaScript runtime environment for building server-side applications.</li>
+                    </ul>
+                </p>
+                <p class="text-base">
+                    This stack allows developers to build entire applications using a single programming language, JavaScript, streamlining the development process.
+                </p>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">The Foundation: HTML, CSS, and JavaScript</h3>
+                <p class="text-base">
+                    Before diving into frameworks and stacks, mastering the foundations is non-negotiable.
+                    <ul class="list-disc ml-6 mt-2 text-sm">
+                        <li><strong>HTML (HyperText Markup Language):</strong> The structure of every webpage. It's the skeleton that holds all the content. Without HTML, there is no webpage.</li>
+                        <li><strong>CSS (Cascading Style Sheets):</strong> The style and aesthetics. It dictates the colors, fonts, layouts, and overall look and feel of a page. CSS brings the webpage to life.</li>
+                        <li><strong>JavaScript:</strong> The behavior and interactivity. It allows you to make your webpage dynamic, respond to user actions, and fetch data. JavaScript makes the page functional.</li>
+                    </ul>
+                    These three technologies are the bedrock of the web. Understanding them deeply is what separates a good developer from a great one.
+                </p>
+            </div>
+            
+            <!-- Exercise Links Section -->
+            <div id="exercise-links" class="bg-white rounded-lg shadow-lg p-8 mb-10">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Lab Exercises</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="Weather1.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="1">Problem Statement1</a>
+                    <a href="Weather2.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="2">Problem Statement2</a>
+                    <a href="Weather3.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="3">Problem Statement3</a>
+                    <a href="Weather4.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="4">Problem Statement4</a>
+                    <a href="studentInformation.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="5">Problem Statement5</a>
+                    <a href="stdeuntinfo2.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="6">Problem Statement6</a>
+                    <a href="studentEnrollment.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="7">Problem Statement7</a>
+                    <a href="dellprods.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="8">Problem Statement8</a>
+                    <a href="shoppingCart.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="9">Problem Statement9</a>
+                    <a href="RouteAnalysis.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="10">Problem Statement10</a>
+                    <a href="hotelorder.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="11">Problem Statement11</a>
+                     <a href="banking.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="12">Problem Statement12</a>
+                </div>
+            </div>
+
+            <!-- Exercise Content will be dynamically loaded here -->
+            <div id="exercise-content" class="bg-white rounded-lg shadow-lg p-8 hidden">
+                <h2 id="exercise-title" class="text-2xl font-bold mb-4 text-indigo-700"></h2>
+                <div id="exercise-problem" class="text-gray-700 text-base mb-8 pb-8 border-b border-gray-200"></div>
+                <h3 class="text-xl font-bold mb-4 text-indigo-700">Solution</h3>
+                <div id="exercise-solution" class="code-block"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-4 mt-auto">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 NBKRIST-FullStack Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for dynamic content loading -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const exercises = {
+                '1': {
+                    title: 'Exercise 1: "Hello World"',
+                    problem: 'Write a simple JavaScript function that changes the text of an HTML element to say "Hello World!". This is the first step to understanding DOM manipulation.',
+                    solution: `// HTML: <p id="message"></p>
+// JavaScript:
+document.getElementById('message').innerText = 'Hello World!';`
+                },
+                '2': {
+                    title: 'Exercise 2: Simple Calculator',
+                    problem: 'Create a webpage with two input fields and a button. When the button is clicked, add the numbers from the input fields and display the result.',
+                    solution: `// HTML:
+// <input type="number" id="num1">
+// <input type="number" id="num2">
+// <button onclick="addNumbers()">Add</button>
+// <p id="result"></p>
+
+// JavaScript:
+function addNumbers() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const result = num1 + num2;
+    document.getElementById('result').innerText = 'Result: ' + result;
+}`
+                },
+                '3': {
+                    title: 'Exercise 3: String Reverser',
+                    problem: 'Build a webpage with a text input field and a button. When the button is clicked, reverse the string entered by the user and display the reversed string on the page.',
+                    solution: `// HTML:
+// <input type="text" id="inputString">
+// <button onclick="reverseText()">Reverse</button>
+// <p id="outputString"></p>
+
+// JavaScript:
+function reverseText() {
+    const input = document.getElementById('inputString').value;
+    const reversed = input.split('').reverse().join('');
+    document.getElementById('outputString').innerText = reversed;
+}`
+                },
+                '4': {
+                    title: 'Exercise 4: Array Operations',
+                    problem: 'Given an array of numbers, write a JavaScript function to find the sum and average of all the numbers in the array. Display the results on the page.',
+                    solution: `// HTML:
+// <p id="arraySum"></p>
+// <p id="arrayAverage"></p>
+
+// JavaScript:
+const numbers = [10, 20, 30, 40, 50];
+let sum = 0;
+for (const num of numbers) {
+    sum += num;
+}
+const average = sum / numbers.length;
+
+document.getElementById('arraySum').innerText = 'Sum: ' + sum;
+document.getElementById('arrayAverage').innerText = 'Average: ' + average;`
+                },
+                '5': {
+                    title: 'Exercise 5: Simple To-Do List App',
+                    problem: 'Create a basic To-Do List application. It should have an input field to add new tasks and a button. When the button is clicked, the new task should be added to a list on the page.',
+                    solution: `// HTML:
+// <input type="text" id="newTask">
+// <button onclick="addTask()">Add Task</button>
+// <ul id="taskList"></ul>
+
+// JavaScript:
+function addTask() {
+    const newTask = document.getElementById('newTask').value;
+    if (newTask === '') return;
+
+    const listItem = document.createElement('li');
+    listItem.textContent = newTask;
+    document.getElementById('taskList').appendChild(listItem);
+    document.getElementById('newTask').value = '';
+}`
+                },
+                '6': {
+                    title: 'Exercise 6: Form Validation',
+                    problem: 'Create a simple form with an email input field. Use JavaScript to validate the email format when the user tries to submit the form. Display an error message if the format is incorrect.',
+                    solution: `// HTML:
+// <form id="emailForm">
+//     <input type="email" id="emailInput" placeholder="Enter your email">
+//     <button type="submit">Submit</button>
+// </form>
+// <p id="validationMessage"></p>
+
+// JavaScript:
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('emailInput');
+    const emailValue = emailInput.value;
+    const messageElement = document.getElementById('validationMessage');
+    
+    const emailRegex = /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/;
+    
+    if (emailRegex.test(emailValue)) {
+        messageElement.textContent = 'Email is valid!';
+        messageElement.style.color = 'green';
+    } else {
+        messageElement.textContent = 'Please enter a valid email address.';
+        messageElement.style.color = 'red';
+    }
+});`
+                },
+                '7': {
+                    title: 'Exercise 7: Simple API Call',
+                    problem: 'Use the Fetch API to make a GET request to a public API (e.g., JSONPlaceholder) and display a user\'s name from the retrieved data on the page.',
+                    solution: `// HTML:
+// <p id="username"></p>
+
+// JavaScript:
+fetch('https://jsonplaceholder.typicode.com/users/1')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('username').innerText = 'User: ' + data.name;
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+        document.getElementById('username').innerText = 'Failed to load user data.';
+    });`
+                },
+                '8': {
+                    title: 'Exercise 8: Dynamic HTML Creation',
+                    problem: 'Create a JavaScript function that takes an array of objects (e.g., users with names and ages) and dynamically generates a list of HTML elements to display the data.',
+                    solution: `// HTML:
+// <ul id="userList"></ul>
+
+// JavaScript:
+const users = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 35 }
+];
+
+const userList = document.getElementById('userList');
+users.forEach(user => {
+    const listItem = document.createElement('li');
+    listItem.innerText = \`\${user.name} (\${user.age} years old)\`;
+    userList.appendChild(listItem);
+});`
+                },
+                '9': {
+                    title: 'Exercise 9: Basic CSS Layout',
+                    problem: 'Using CSS, create a simple three-column layout. The columns should stack vertically on smaller screens and align horizontally on larger screens.',
+                    solution: `/* HTML: */
+/* <div class="container"> */
+/* <div class="column">Column 1</div> */
+/* <div class="column">Column 2</div> */
+/* <div class="column">Column 3</div> */
+/* </div> */
+
+/* CSS (using Tailwind classes): */
+/* The layout is handled by Tailwind's responsive grid system. */
+/* Example classes on the parent container: */
+/* <div class="grid grid-cols-1 md:grid-cols-3 gap-4"> */
+/* <div class="bg-blue-200 p-4 rounded-lg">Column 1</div> */
+/* <div class="bg-green-200 p-4 rounded-lg">Column 2</div> */
+/* <div class="bg-red-200 p-4 rounded-lg">Column 3</div> */
+/* </div> */
+
+/* This solution demonstrates the use of CSS to control layout and responsiveness. */`
+                },
+                '10': {
+                    title: 'Exercise 10: Event Handling',
+                    problem: 'Create a button and a counter on the page. Each time the button is clicked, increment the counter value and update the display.',
+                    solution: `// HTML:
+// <p>Count: <span id="counter">0</span></p>
+// <button id="clickMeBtn">Click Me!</button>
+
+// JavaScript:
+let count = 0;
+const counterElement = document.getElementById('counter');
+const button = document.getElementById('clickMeBtn');
+
+button.addEventListener('click', () => {
+    count++;
+    counterElement.innerText = count;
+});`
+                }
+            };
+            
+            const introSection = document.getElementById('intro-section');
+            const exerciseContent = document.getElementById('exercise-content');
+            const exerciseLinksSection = document.getElementById('exercise-links');
+            const exerciseTitle = document.getElementById('exercise-title');
+            const exerciseProblem = document.getElementById('exercise-problem');
+            const exerciseSolution = document.getElementById('exercise-solution');
+            
+            // Set up event listeners for all exercise links
+            const exerciseLinks = document.querySelectorAll('.exercise-link');
+            exerciseLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const exerciseId = e.target.getAttribute('data-exercise');
+                    showSolution(exerciseId);
+                });
+            });
+
+            // Function to show the problem and solution for a given exercise ID
+            const showSolution = (exerciseId) => {
+                introSection.classList.add('hidden');
+                exerciseLinksSection.classList.add('hidden');
+                exerciseContent.classList.remove('hidden');
+
+                const content = exercises[exerciseId];
+                exerciseTitle.textContent = content.title;
+                exerciseProblem.innerHTML = content.problem;
+                exerciseSolution.innerHTML = \`<pre><code>\` + content.solution + \`</code></pre>\`;
+            };
+            
+        });
+    </script>
+</body>
+</html>
