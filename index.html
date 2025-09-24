@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +14,21 @@
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6;
         }
+
         .intro-box {
             background-image: linear-gradient(135deg, #3730a3, #4338ca);
             color: white;
         }
+
         .exercise-link {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
+
         .exercise-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .code-block {
             background-color: #f8fafc;
             border-left: 4px solid #4f46e5;
@@ -34,6 +39,7 @@
             word-wrap: break-word;
             margin-top: 1rem;
         }
+
         pre code {
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.9rem;
@@ -41,6 +47,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
     <!-- Header Section -->
@@ -57,54 +64,102 @@
             <div id="intro-section" class="intro-box rounded-lg p-8 mb-10 shadow-lg">
                 <h2 class="text-3xl font-bold mb-4">What is Full Stack? Why is it So Important?</h2>
                 <p class="text-base mb-4">
-                    A **Full Stack Software Engineer** is a professional who works on both the front-end (user interface) and the back-end (server-side) of an application. They are versatile, capable of managing all layers of development, from the database and server logic to the visual elements a user interacts with.
+                    A **Full Stack Software Engineer** is a professional who works on both the front-end (user
+                    interface) and the back-end (server-side) of an application. They are versatile, capable of managing
+                    all layers of development, from the database and server logic to the visual elements a user
+                    interacts with.
                 </p>
                 <p class="text-base mb-4">
-                    Learning full stack development is crucial to becoming a well-rounded Software Engineer because it gives you a holistic understanding of how an entire system works. It makes you a valuable asset to any team, allowing you to contribute to every stage of a project and solve problems from end to end.
+                    Learning full stack development is crucial to becoming a well-rounded Software Engineer because it
+                    gives you a holistic understanding of how an entire system works. It makes you a valuable asset to
+                    any team, allowing you to contribute to every stage of a project and solve problems from end to end.
                 </p>
 
                 <h3 class="text-2xl font-bold mt-8 mb-4">The MERN Stack</h3>
                 <p class="text-base mb-4">
-                    The **MERN stack** is a popular combination of technologies for building robust web applications. It consists of four key components:
-                    <ul class="list-disc ml-6 mt-2 text-sm">
-                        <li><strong>M</strong>ongoDB: A NoSQL database for flexible data storage.</li>
-                        <li><strong>E</strong>xpress.js: A back-end web application framework for Node.js.</li>
-                        <li><strong>R</strong>eact: A front-end JavaScript library for building user interfaces.</li>
-                        <li><strong>N</strong>ode.js: A JavaScript runtime environment for building server-side applications.</li>
-                    </ul>
+                    The **MERN stack** is a popular combination of technologies for building robust web applications. It
+                    consists of four key components:
+                <ul class="list-disc ml-6 mt-2 text-sm">
+                    <li><strong>M</strong>ongoDB: A NoSQL database for flexible data storage.</li>
+                    <li><strong>E</strong>xpress.js: A back-end web application framework for Node.js.</li>
+                    <li><strong>R</strong>eact: A front-end JavaScript library for building user interfaces.</li>
+                    <li><strong>N</strong>ode.js: A JavaScript runtime environment for building server-side
+                        applications.</li>
+                </ul>
                 </p>
                 <p class="text-base">
-                    This stack allows developers to build entire applications using a single programming language, JavaScript, streamlining the development process.
+                    This stack allows developers to build entire applications using a single programming language,
+                    JavaScript, streamlining the development process.
                 </p>
 
                 <h3 class="text-2xl font-bold mt-8 mb-4">The Foundation: HTML, CSS, and JavaScript</h3>
                 <p class="text-base">
                     Before diving into frameworks and stacks, mastering the foundations is non-negotiable.
-                    <ul class="list-disc ml-6 mt-2 text-sm">
-                        <li><strong>HTML (HyperText Markup Language):</strong> The structure of every webpage. It's the skeleton that holds all the content. Without HTML, there is no webpage.</li>
-                        <li><strong>CSS (Cascading Style Sheets):</strong> The style and aesthetics. It dictates the colors, fonts, layouts, and overall look and feel of a page. CSS brings the webpage to life.</li>
-                        <li><strong>JavaScript:</strong> The behavior and interactivity. It allows you to make your webpage dynamic, respond to user actions, and fetch data. JavaScript makes the page functional.</li>
-                    </ul>
-                    These three technologies are the bedrock of the web. Understanding them deeply is what separates a good developer from a great one.
+                <ul class="list-disc ml-6 mt-2 text-sm">
+                    <li><strong>HTML (HyperText Markup Language):</strong> The structure of every webpage. It's the
+                        skeleton that holds all the content. Without HTML, there is no webpage.</li>
+                    <li><strong>CSS (Cascading Style Sheets):</strong> The style and aesthetics. It dictates the colors,
+                        fonts, layouts, and overall look and feel of a page. CSS brings the webpage to life.</li>
+                    <li><strong>JavaScript:</strong> The behavior and interactivity. It allows you to make your webpage
+                        dynamic, respond to user actions, and fetch data. JavaScript makes the page functional.</li>
+                </ul>
+                These three technologies are the bedrock of the web. Understanding them deeply is what separates a good
+                developer from a great one.
                 </p>
             </div>
-            
+
             <!-- Exercise Links Section -->
             <div id="exercise-links" class="bg-white rounded-lg shadow-lg p-8 mb-10">
                 <h2 class="text-2xl font-bold mb-4 text-gray-800">Lab Exercises</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <a href="Weather1.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="1">Problem Statement1</a>
-                    <a href="Weather2.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="2">Problem Statement2</a>
-                    <a href="Weather3.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="3">Problem Statement3</a>
-                    <a href="Weather4.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="4">Problem Statement4</a>
-                    <a href="studentInformation.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="5">Problem Statement5</a>
-                    <a href="stdeuntinfo2.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="6">Problem Statement6</a>
-                    <a href="studentEnrollment.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="7">Problem Statement7</a>
-                    <a href="dellprods.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="8">Problem Statement8</a>
-                    <a href="shoppingCart.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="9">Problem Statement9</a>
-                    <a href="RouteAnalysis.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="10">Problem Statement10</a>
-                    <a href="hotelorder.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="11">Problem Statement11</a>
-                     <a href="banking.html" class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg" data-exercise="12">Problem Statement12</a>
+                    <a href="Weather1.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="1">Problem Statement1</a>
+                    <a href="Weather2.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="2">Problem Statement2</a>
+                    <a href="Weather3.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="3">Problem Statement3</a>
+                    <a href="Weather4.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="4">Problem Statement4</a>
+                    <a href="studentInformation.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="5">Problem Statement5</a>
+                    <a href="stdeuntinfo2.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="6">Problem Statement6</a>
+                    <a href="studentEnrollment.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="7">Problem Statement7</a>
+                    <a href="dellprods.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="8">Problem Statement8</a>
+                    <a href="shoppingCart.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="9">Problem Statement9</a>
+                    <a href="RouteAnalysis.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="10">Problem Statement10</a>
+                    <a href="hotelorder.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="11">Problem Statement11</a>
+                    <a href="banking.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="12">Problem Statement12</a>
+                    <a href="soiltest.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="13">Problem Statement13</a>
+
+                    <a href="fertilizers.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="14">Problem Statement14</a>
+
+                    <a href="pest.html"
+                        class="exercise-link bg-indigo-600 text-white hover:bg-indigo-700 block text-center py-3 px-5 rounded-lg"
+                        data-exercise="15">Problem Statement15</a>
+
                 </div>
             </div>
 
@@ -309,14 +364,14 @@ button.addEventListener('click', () => {
 });`
                 }
             };
-            
+
             const introSection = document.getElementById('intro-section');
             const exerciseContent = document.getElementById('exercise-content');
             const exerciseLinksSection = document.getElementById('exercise-links');
             const exerciseTitle = document.getElementById('exercise-title');
             const exerciseProblem = document.getElementById('exercise-problem');
             const exerciseSolution = document.getElementById('exercise-solution');
-            
+
             // Set up event listeners for all exercise links
             const exerciseLinks = document.querySelectorAll('.exercise-link');
             exerciseLinks.forEach(link => {
@@ -342,4 +397,5 @@ button.addEventListener('click', () => {
         });
     </script>
 </body>
+
 </html>
