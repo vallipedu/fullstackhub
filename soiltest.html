@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation System</title>
+    <!-- Use Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #e0f2fe, #d1e5f8, #c0daef);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main container for the application -->
+    <div
+        class="bg-white rounded-3xl shadow-2xl border border-gray-200 p-8 max-w-3xl w-full transition-transform transform hover:scale-105 duration-300">
+
+        <!-- Problem Statement Section -->
+        <section class="mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 text-center tracking-wide">
+                NBKRIST Full-Stack Hub
+            </h1>
+            <h1 class="text-4xl font-extrabold text-red-700 mb-4 text-center">
+                Crop Recommendation for Indian Farmers
+            </h1>
+            <p class="text-gray-700 mb-6 text-center text-lg">
+                This document outlines the problem and functional requirements for a web application designed to assist
+                Indian farmers in making informed decisions about crop selection.
+            </p>
+            <h2 class="text-2xl font-bold text-red-600 mb-2">
+                Problem Statement
+            </h2>
+            <p class="text-gray-600 mb-4">
+                Indian agriculture is heavily dependent on the appropriate selection of crops based on local soil
+                conditions. A lack of specific knowledge can lead to low yields and financial losses. The objective is
+                to design and **develop a Full_Stack Application**, a simple, functional web application that provides
+                crop recommendations to farmers based on the type of soil in their region.
+            </p>
+            <h2 class="text-2xl font-bold text-gray-700 mb-2">
+                Functional Requirements
+            </h2>
+            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                <li>
+                    <strong>Input:</strong> The system must allow the user (farmer) to select a soil type from a
+                    predefined list of common Indian soil types.
+                </li>
+                <li>
+                    <strong>Recommendation:</strong> Based on the selected soil type, the application must display a
+                    list of suitable crops that thrive in those conditions.
+                </li>
+                <li>
+                    <strong>User Interface:</strong> The interface must be straightforward and intuitive, consisting of
+                    a soil type selector and a dedicated section to display the recommended crops.
+                </li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-gray-700 mt-6 mb-2">
+                Data
+            </h2>
+            <p class="text-gray-600 mb-2">
+                The following data structure will be used to map soil types to suitable crops:
+            </p>
+            <pre class="bg-gray-100 rounded-xl p-4 overflow-x-auto text-sm text-gray-800 border border-gray-300"><code>const cropData = {
+    Alluvial: ["Rice", "Wheat", "Sugarcane", "Jute", "Tobacco"],
+    Black: ["Cotton", "Sugarcane", "Jowar", "Tobacco", "Oilseeds"],
+    Red: ["Groundnuts", "Ragi", "Maize", "Tobacco", "Millets"],
+    Laterite: ["Tea", "Coffee", "Cashew", "Rubber", "Coconut"],
+    Mountain: ["Tea", "Coffee", "Spices", "Fruits (Apples, Pears)", "Maize"],
+    Desert: ["Millets", "Barley", "Jowar", "Bajra"]
+};</code></pre>
+            <h2 class="text-2xl font-bold text-gray-700 mt-6 mb-2">
+                Testing Requirements
+            </h2>
+            <p class="text-gray-600 mb-2">
+                The application's functionality must be verified with the following test cases:
+            </p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                <li>
+                    <strong>Test Case 1.1: Valid Soil Selection</strong>
+                    <ul class="list-circle list-inside ml-4 text-gray-500">
+                        <li><strong>Given:</strong> The user selects a valid soil type (e.g., "Alluvial Soil").</li>
+                        <li><strong>Expected Result:</strong> The application must correctly display the list of
+                            recommended crops associated with that soil type.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Test Case 1.2: No Soil Selected</strong>
+                    <ul class="list-circle list-inside ml-4 text-gray-500">
+                        <li><strong>Given:</strong> The user attempts to get a recommendation without selecting a soil
+                            type.</li>
+                        <li><strong>Expected Result:</strong> An informative message box is displayed, prompting the
+                            user to select a soil type.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Functional Application Section -->
+        <hr class="my-6 border-gray-300">
+
+        <section id="application" class="p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">
+                Crop Recommendation Application
+            </h2>
+
+            <div class="flex flex-col items-center">
+                <label for="soilType" class="text-lg font-medium text-gray-700 mb-2">
+                    Select your soil type:
+                </label>
+                <select id="soilType"
+                    class="w-full max-w-xs p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                    <option value="" disabled selected>-- Select a Soil Type --</option>
+                    <option value="Alluvial">Alluvial Soil</option>
+                    <option value="Black">Black Soil</option>
+                    <option value="Red">Red Soil</option>
+                    <option value="Laterite">Laterite Soil</option>
+                    <option value="Mountain">Mountain Soil</option>
+                    <option value="Desert">Desert Soil</option>
+                </select>
+
+                <button id="recommendBtn"
+                    class="mt-6 px-8 py-4 bg-green-600 text-white font-bold rounded-full shadow-lg hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105">
+                    Get Crop Recommendation
+                </button>
+            </div>
+
+            <!-- Recommendation Display Area -->
+            <div id="recommendationOutput"
+                class="mt-8 p-6 bg-green-50 rounded-xl border-2 border-green-300 shadow-inner hidden transition-all duration-300">
+                <h3 class="text-2xl font-bold text-green-800 mb-3 text-center">
+                    Recommended Crops
+                </h3>
+                <ul id="cropList" class="list-disc list-inside text-green-700 text-lg space-y-1">
+                    <!-- Recommended crops will be dynamically inserted here -->
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+    <footer class="mt-8 p-4 text-center text-gray-600">
+        <p>&copy; 2024 NBKRIST. All Rights Reserved.</p>
+    </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Data structure mapping soil types to suitable crops
+            const cropData = {
+                Alluvial: ["Rice", "Wheat", "Sugarcane", "Jute", "Tobacco"],
+                Black: ["Cotton", "Sugarcane", "Jowar", "Tobacco", "Oilseeds"],
+                Red: ["Groundnuts", "Ragi", "Maize", "Tobacco", "Millets"],
+                Laterite: ["Tea", "Coffee", "Cashew", "Rubber", "Coconut"],
+                Mountain: ["Tea", "Coffee", "Spices", "Fruits (Apples, Pears)", "Maize"],
+                Desert: ["Millets", "Barley", "Jowar", "Bajra"]
+            };
+
+            // Destructuring to get references to the required DOM elements
+            const recommendationOutput = document.getElementById('recommendationOutput');
+            const cropList = document.getElementById('cropList');
+            const recommendBtn = document.getElementById('recommendBtn');
+
+            // Function to handle the recommendation logic
+            const getRecommendation = () => {
+                // Using destructuring to get the selected value from the select element
+                const selectedSoil = document.getElementById('soilType').value;
+
+                // Clear any previous recommendations
+                cropList.innerHTML = '';
+
+                if (selectedSoil && cropData[selectedSoil]) {
+                    // Use destructuring to get the crops array for the selected soil
+                    const recommendedCrops = cropData[selectedSoil];
+
+                    // Display the recommendation section
+                    recommendationOutput.classList.remove('hidden');
+
+                    // Loop through the recommended crops using an arrow function
+                    recommendedCrops.forEach(crop => {
+                        const li = document.createElement('li');
+                        li.textContent = crop;
+                        cropList.appendChild(li);
+                    });
+                } else {
+                    // If no soil is selected or data is missing, hide the output and alert the user
+                    recommendationOutput.classList.add('hidden');
+                    // Changed alert() to a custom message box as per instructions
+                    const messageBox = document.createElement('div');
+                    messageBox.className = 'fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50';
+                    messageBox.innerHTML = `
+                        <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm text-center">
+                            <p class="text-lg font-semibold text-gray-800 mb-4">Please select a valid soil type to get a recommendation.</p>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">OK</button>
+                        </div>
+                    `;
+                    document.body.appendChild(messageBox);
+                }
+            };
+
+            // Add an event listener to the button using an arrow function
+            recommendBtn.addEventListener('click', getRecommendation);
+        });
+    </script>
+</body>
+
+</html>

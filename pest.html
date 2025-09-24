@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pest Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4, #e2f9ee, #d8f1e6);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main container for the application -->
+    <div class="bg-white text-gray-800 rounded-3xl shadow-2xl p-8 max-w-4xl w-full border border-gray-200 transition-transform transform hover:scale-105 duration-300">
+     <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 text-center tracking-wide">
+                NBKRIST Full-Stack Hub
+            </h1>
+        <!-- Problem Statement Section -->
+        <section class="mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 text-center tracking-wide">
+                 Pest Management System for Farmers
+            </h1>
+            <p class="text-gray-600 mb-6 text-center text-lg md:text-xl leading-relaxed">
+                This project is about building a simple web app to help farmers identify and manage common crop pests in Andhra Pradesh.
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold text-red-700 mb-2">
+                Problem Statement
+            </h2>
+            <p class="text-red-600 mb-4 leading-relaxed">
+                Pests can ruin a farmer's crop and cause huge losses. Your task is to design and <strong class="text-blue-900">develop a Full_Stack Application</strong> that gives a list of suitable pesticides based on the crop and the pest attacking it. The application must use a more complex data structure, with multiple fields for each recommendation.
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-2">
+                Functional Requirements
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>
+                    <strong>Input:</strong> The app should have two dropdown lists. One for the crop and one for the pest. The user must select both.
+                </li>
+                <li>
+                    <strong>Recommendation:</strong> When the user selects a crop and a pest, the app must show the recommended pesticide and any associated notes.
+                </li>
+                <li>
+                    <strong>User Interface:</strong> The interface should be simple and easy to use. It needs two dropdowns and a dedicated area to show the result.
+                </li>
+            </ul>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mt-6 mb-2">
+                Data
+            </h2>
+            <p class="text-gray-700 mb-2 leading-relaxed">
+                Use the following structured data. Notice that each pest has its own object with `pesticide` and `notes` fields.
+            </p>
+            <pre class="bg-gray-100 rounded-xl p-4 overflow-x-auto text-sm text-gray-800 border border-gray-300"><code>const pestData = {
+    "Rice": {
+        "Rice Stem Borer": { pesticide: "Chlorantraniliprole", notes: "Apply at vegetative stage. Effective on young larvae." },
+        "Rice Hispa": { pesticide: "Monocrotophos", notes: "Use during early stages of infestation. Highly effective." }
+    },
+    "Groundnut": {
+        "Leaf Miner": { pesticide: "Chlorpyrifos", notes: "Broad-spectrum insecticide. Apply as foliar spray." },
+        "Aphids": { pesticide: "Imidacloprid", notes: "Systemic insecticide. Effective against sucking pests." }
+    },
+    "Sugarcane": {
+        "Early Shoot Borer": { pesticide: "Carbofuran", notes: "Granular insecticide for soil application at planting." },
+        "White Grubs": { pesticide: "Phorate", notes: "Apply in the soil to control grubs. Use with caution." }
+    },
+    "Cotton": {
+        "Cotton Bollworm": { pesticide: "Pyrethroids", notes: "Commonly used. Rotate with other classes to prevent resistance." },
+        "Whitefly": { pesticide: "Acetamiprid", notes: "Neonicotinoid insecticide. Safe for beneficial insects." }
+    },
+    "Maize": {
+        "Fall Armyworm": { pesticide: "Emamectin benzoate", notes: "Use when infestation is severe. Highly potent." },
+        "Maize Stem Borer": { pesticide: "Spinosad", notes: "Natural product insecticide. Target the stem base." }
+    }
+};</code></pre>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mt-6 mb-2">
+                Testing Requirements
+            </h2>
+            <p class="text-gray-700 mb-2 leading-relaxed">
+                Test your application with these cases:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>
+                    <strong>Test Case 1.1: Correct Recommendation</strong>
+                    <ul class="list-circle list-inside ml-4 text-gray-600">
+                        <li><strong>Given:</strong> The user selects "Groundnut" and "Leaf Miner".</li>
+                        <li><strong>Expected Result:</strong> The application must show the recommended pesticide: "Chlorpyrifos" and the note: "Broad-spectrum insecticide. Apply as foliar spray."</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Test Case 1.2: Missing Selection</strong>
+                    <ul class="list-circle list-inside ml-4 text-gray-600">
+                        <li><strong>Given:</strong> The user selects a crop but not a pest.</li>
+                        <li><strong>Expected Result:</strong> A message box should pop up, asking the user to make a full selection.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Test Case 1.3: No Data Available</strong>
+                    <ul class="list-circle list-inside ml-4 text-gray-600">
+                        <li><strong>Given:</strong> The user selects a combination that doesn't have a match (e.g., "Maize" and "White Grubs").</li>
+                        <li><strong>Expected Result:</strong> A message box should indicate that no recommendation is available for that combination.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Functional Application Section -->
+        <hr class="my-6 border-gray-300">
+
+        <section id="application" class="p-6 bg-gray-50 rounded-lg shadow-inner border border-gray-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4 text-center">
+                Pest Management Application
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-items-center">
+                <!-- Select Crop -->
+                <div class="w-full max-w-xs">
+                    <label for="crop" class="text-lg font-medium text-gray-700 mb-2 block">
+                        Select Crop:
+                    </label>
+                    <select id="crop" class="w-full p-3 border-2 border-gray-300 rounded-lg shadow-sm bg-white text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                        <option value="" disabled selected>-- Select a Crop --</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Groundnut">Groundnut</option>
+                        <option value="Sugarcane">Sugarcane</option>
+                        <option value="Cotton">Cotton</option>
+                        <option value="Maize">Maize</option>
+                    </select>
+                </div>
+
+                <!-- Select Pest -->
+                <div class="w-full max-w-xs">
+                    <label for="pest" class="text-lg font-medium text-gray-700 mb-2 block">
+                        Select Pest:
+                    </label>
+                    <select id="pest" class="w-full p-3 border-2 border-gray-300 rounded-lg shadow-sm bg-white text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                        <option value="" disabled selected>-- Select a Pest --</option>
+                        <option value="Rice Stem Borer">Rice Stem Borer</option>
+                        <option value="Rice Hispa">Rice Hispa</option>
+                        <option value="Leaf Miner">Leaf Miner</option>
+                        <option value="Aphids">Aphids</option>
+                        <option value="Early Shoot Borer">Early Shoot Borer</option>
+                        <option value="White Grubs">White Grubs</option>
+                        <option value="Cotton Bollworm">Cotton Bollworm</option>
+                        <option value="Whitefly">Whitefly</option>
+                        <option value="Fall Armyworm">Fall Armyworm</option>
+                        <option value="Maize Stem Borer">Maize Stem Borer</option>
+                    </select>
+                </div>
+
+                <!-- Recommendation Button (Spans both columns on wider screens) -->
+                <div class="md:col-span-2 w-full flex justify-center">
+                    <button id="recommendBtn" class="mt-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105">
+                        Get Pesticide Recommendation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recommendation Display Area -->
+            <div id="recommendationOutput" class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-400 shadow-md hidden transition-all duration-300">
+                <h3 class="text-2xl font-bold text-blue-800 mb-3 text-center">
+                    Recommendation
+                </h3>
+                <div id="recommendationContent" class="text-gray-800 text-lg space-y-2">
+                    <!-- Recommended pesticides and notes will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 p-4 text-center text-gray-600">
+        <p>&copy; 2024 NBKRIST. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Data structure mapping crop and pest combinations to suitable pesticides
+            const pestData = {
+                "Rice": {
+                    "Rice Stem Borer": { pesticide: "Chlorantraniliprole", notes: "Apply at vegetative stage. Effective on young larvae." },
+                    "Rice Hispa": { pesticide: "Monocrotophos", notes: "Use during early stages of infestation. Highly effective." }
+                },
+                "Groundnut": {
+                    "Leaf Miner": { pesticide: "Chlorpyrifos", notes: "Broad-spectrum insecticide. Apply as foliar spray." },
+                    "Aphids": { pesticide: "Imidacloprid", notes: "Systemic insecticide. Effective against sucking pests." }
+                },
+                "Sugarcane": {
+                    "Early Shoot Borer": { pesticide: "Carbofuran", notes: "Granular insecticide for soil application at planting." },
+                    "White Grubs": { pesticide: "Phorate", notes: "Apply in the soil to control grubs. Use with caution." }
+                },
+                "Cotton": {
+                    "Cotton Bollworm": { pesticide: "Pyrethroids", notes: "Commonly used. Rotate with other classes to prevent resistance." },
+                    "Whitefly": { pesticide: "Acetamiprid", notes: "Neonicotinoid insecticide. Safe for beneficial insects." }
+                },
+                "Maize": {
+                    "Fall Armyworm": { pesticide: "Emamectin benzoate", notes: "Use when infestation is severe. Highly potent." },
+                    "Maize Stem Borer": { pesticide: "Spinosad", notes: "Natural product insecticide. Target the stem base." }
+                }
+            };
+
+            // Destructuring to get references to the required DOM elements
+            const recommendationOutput = document.getElementById('recommendationOutput');
+            const recommendationContent = document.getElementById('recommendationContent');
+            const recommendBtn = document.getElementById('recommendBtn');
+            const cropSelect = document.getElementById('crop');
+            const pestSelect = document.getElementById('pest');
+
+            // Function to handle the recommendation logic
+            const getRecommendation = () => {
+                const selectedCrop = cropSelect.value;
+                const selectedPest = pestSelect.value;
+                
+                recommendationContent.innerHTML = '';
+                recommendationOutput.classList.add('hidden');
+
+                if (!selectedCrop || !selectedPest) {
+                    const messageBox = document.createElement('div');
+                    messageBox.className = 'fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50';
+                    messageBox.innerHTML = `
+                        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-xl max-w-sm text-center border-2 border-gray-300">
+                            <p class="text-lg font-semibold mb-4">Please select both a crop and a pest to get a recommendation.</p>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">OK</button>
+                        </div>
+                    `;
+                    document.body.appendChild(messageBox);
+                    return;
+                }
+
+                // Find the matching data record using nested object access
+                const recommendedPesticideRecord = pestData?.[selectedCrop]?.[selectedPest];
+                
+                if (recommendedPesticideRecord) {
+                    recommendationOutput.classList.remove('hidden');
+                    recommendationContent.innerHTML = `
+                        <p class="font-bold text-xl mb-2">Pesticide: ${recommendedPesticideRecord.pesticide}</p>
+                        <p class="text-gray-600">${recommendedPesticideRecord.notes}</p>
+                    `;
+                } else {
+                    const messageBox = document.createElement('div');
+                    messageBox.className = 'fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50';
+                    messageBox.innerHTML = `
+                        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-xl max-w-sm text-center border-2 border-gray-300">
+                            <p class="text-lg font-semibold mb-4">No pesticide recommendation available for this combination.</p>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">OK</button>
+                        </div>
+                    `;
+                    document.body.appendChild(messageBox);
+                }
+            };
+            
+            recommendBtn.addEventListener('click', getRecommendation);
+        });
+    </script>
+</body>
+</html>
